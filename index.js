@@ -9,15 +9,15 @@ app.use(cors())
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("Server On ");
-  });
+  res.send("Server On ");
+});
 
-  app.listen(port, () => {
-    console.log(`listening at ${port}`);
-  });
+app.listen(port, () => {
+  console.log(`listening at ${port}`);
+});
 
-  //Mongoose Stuffs
-  //Connecting to Mongo
+//Mongoose Stuffs
+//Connecting to Mongo
 
 mongoose
   .connect(
@@ -31,14 +31,15 @@ mongoose
   });
 
 
-  //Routes Decalaration 
-  const userRoute = require('./routes/users')
-  const noticeRoute = require('./routes/notice')  
-const postsRoute = require('./routes/posts')
+//Routes Decalaration 
+const userRoute = require('./routes/users')
+const noticeRoute = require('./routes/notice')
+const postRoute = require('./routes/posts')
 
 
 
-  //Using Routes
-app.use('/users',userRoute)
-app.use('/notice',noticeRoute)
-app.use('/posts',postsRoute)
+
+//Using Routes
+app.use('/users', userRoute)
+app.use('/notice', noticeRoute)
+app.use('/post', postRoute)
