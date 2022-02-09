@@ -33,10 +33,12 @@ mongoose
 
   //Routes Decalaration 
   const userRoute = require('./routes/users')
-  const noticeRoute = require('./routes/notice')
+  const noticeRoute = require('./routes/notice')  
+const postsRoute = require('./routes/posts')
 
 
 
   //Using Routes
 app.use('/users',userRoute)
 app.use('/notice',noticeRoute)
+app.use('/posts',postsRoute)
