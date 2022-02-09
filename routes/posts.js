@@ -5,7 +5,7 @@ router.post("/new", async (req, res) => {
     const newPost = new Post({
         userName: req.body.userName,
 	userEmail:req.body.email,
-	comment:req.body.comment,
+	body:req.body.post,
     });
     try {
         const savedPost = await newPost.save();
