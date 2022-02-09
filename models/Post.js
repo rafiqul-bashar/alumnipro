@@ -3,9 +3,10 @@ const mongoose = require('mongoose');
 
 const PostSchema = new mongoose.Schema(
     {
-    user: { type: String, required: true},
+    userName: {type:string,, required: true}
+ userEmail: { type: String, required: true },
 body: { type: String, required: true},
-    likes: { type: Number},
+    likes: { type: Number, default: 0},
     comment: [{ body: String, date: Date,name:String }],
 
     },

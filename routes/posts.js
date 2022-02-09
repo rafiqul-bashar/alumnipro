@@ -3,8 +3,8 @@ const router = require('express').Router()
 //save new post
 router.post("/new", async (req, res) => {
     const newPost = new Post({
-        user: req.body.user,
-	email:req.body.email,
+        userName: req.body.userName,
+	userEmail:req.body.email,
 	comment:req.body.comment,
     });
     try {
