@@ -2,18 +2,18 @@ const Post = require('../models/Post')
 const router = require('express').Router()
 //save new post
 router.post("/new", async (req, res) => {
-    const newPost = new Post({
-        userName: req.body.userName,
-	userEmail:req.body.email,
-	body:req.body.post,
-    });
-    try {
-        const savedPost = await newPost.save();
-        res.status(201).json(savedPost);
-        console.log(savedPost);
-    } catch (err) {
-        res.status(500).json(err.message);
-    }
+  const newPost = new Post({
+    userName: req.body.userName,
+    userEmail: req.body.email,
+    body: req.body.post,
+  });
+  try {
+    const savedPost = await newPost.save();
+    res.status(201).json(savedPost);
+    console.log(savedPost);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
 });
 //get all post
 router.get("/", async (req, res) => {
@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   try {
     const id = req.params.id;
-    const user = await User.findOneAndUpdate({ id } ,
+    const user = await User.findOneAndUpdate({ id },
       {
         $set: req.body,
       },

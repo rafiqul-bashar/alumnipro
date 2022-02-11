@@ -35,6 +35,7 @@ mongoose
 const userRoute = require('./routes/users')
 const noticeRoute = require('./routes/notice')
 const postRoute = require('./routes/posts')
+const authRoute = require('./routes/auth')
 
 
 
@@ -43,3 +44,4 @@ const postRoute = require('./routes/posts')
 app.use('/users', userRoute)
 app.use('/notice', noticeRoute)
 app.use('/post', postRoute)
+app.use('/auth', authRoute)
